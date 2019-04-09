@@ -11,7 +11,7 @@ function kviz() {
     document.querySelector('.main-con').classList.remove('none');
     const container = document.querySelector('#container');
     const tim = document.querySelector('#vreme');
-    let jsonPitanja = [];
+    let pitanja = [];
     let trenutnoPitanje = 0; // brojač-pitanja
     let zbir = 0; // brojač-zbir tačnih odgovora
 
@@ -19,15 +19,10 @@ function kviz() {
         .then(res => res.json())
         .then(data => {
             data.forEach(d => {
-                jsonPitanja.push([d.pitanje, d.tacan, d.netacan1,
+                pitanja.push([d.pitanje, d.tacan, d.netacan1,
                     d.netacan2, d.netacan3
                 ]);
             });
-            const pitanja = jsonPitanja.slice(0, 10).map(() => {
-                return jsonPitanja.splice(Math.floor(Math.random() *
-                    jsonPitanja.length), 1)[0];
-            }, jsonPitanja.slice());
-            console.log(pitanja);
             napraviPitanja();
 
             function napraviPitanja() {
@@ -37,7 +32,7 @@ function kviz() {
                     clearInterval(sInt);
                     trenutnoPitanje = 0;
                     zbir = 0;
-                    jsonPitanja = [] // praznim niz za novi fetch data
+                    pitanja = [] // praznim niz za novi fetch data
                     return false; // zaustavljam funkciju
                 }
                 // Pitanja, opcije, random sort opcija, prikaz
