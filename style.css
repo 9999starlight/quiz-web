@@ -1,0 +1,190 @@
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  justify-content: center;
+  background-image: linear-gradient(rgba(31, 18, 6, 0.733), rgba(31, 18, 6, 0.575)), url("images/goldback1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-color: #7c3a1396;
+}
+
+.main-con,
+.container {
+  box-sizing: border-box;
+  padding: 0.8em;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nas {
+  margin: 2em auto 0 auto;
+}
+
+.contnaslov,
+.container {
+  padding: 1em;
+  background-color: rgba(199, 154, 137, 0.08);
+}
+
+.borderR {
+  border-radius: 8px;
+}
+
+img {
+  max-width: 100%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+h1,
+h2 {
+  font-size: 2em;
+  font-weight: 500;
+  border-radius: 20px;
+  width: 150px;
+  color: whitesmoke;
+  padding: 0.5em;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.nas h1 {
+  border: none;
+}
+
+.contnaslov h1,
+.contnaslov h2 {
+  width: auto;
+}
+
+.nas h1,
+.nas h2 {
+  background-color: rgba(199, 154, 137, 0.08);
+}
+
+.pitanje {
+  background-color: rgba(51, 32, 26, 0.555);
+  color: white;
+  border: 2px inset whitesmoke;
+  padding: 1em;
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+input,
+button,
+input[type="button"],
+label {
+  background-color: #423528;
+  color: white;
+  box-shadow: 0 6px 6px 0 #42362f, 0 6px 80px 0 #bba58fa6;
+  border: none;
+  border-radius: 7px;
+  margin-top: 1em;
+}
+
+.shadow {
+  box-shadow: 2px 4px 5px 0 rgba(51, 49, 49, 0.16), 2px 4px 10px 0 rgba(80, 82, 95, 0.12);
+}
+
+button,
+input[type="button"] {
+  padding: 1em 1.6em 1em 1.6em;
+  background-color: rgba(37, 13, 4, 0.89);
+  font-size: 1.4em;
+}
+
+label,
+input[type=text] {
+  display: block;
+  min-width: 180px;
+  max-width: 250px;
+  font-size: 1.1em;
+  padding: 0.6em 0.7em;
+  margin-bottom: 0.5em;
+}
+
+label > input {
+  visibility: hidden;
+  position: absolute;
+}
+
+label > input + div,
+button,
+input[type="button"] {
+  cursor: pointer;
+}
+
+label > input + div {
+  font-size: 1.2em;
+}
+
+label > input:checked + div {
+  background-color: #8a73659c;
+  padding: 0.3em 0;
+  border-radius: 6px;
+  border: 1px inset rgba(255, 255, 255, 0.658);
+  font-size: 1.4em;
+}
+
+.none {
+  display: none;
+}
+
+.tacan {
+  background-color: rgba(4, 88, 4, 0.897);
+}
+
+.tacanBorder {
+  border: 7px solid rgb(5, 148, 5);
+}
+
+.netacan {
+  background-color: rgba(207, 3, 3, 0.863);
+}
+
+.netacanBorder {
+  border: 7px solid rgba(207, 3, 3, 0.863);
+}
+
+@media (min-width: 800px) {
+  .contnaslov {
+    margin: 15%;
+  }
+  .container {
+    width: 600px;
+    max-height: 850px;
+    margin: 0.5em auto 1em auto;
+  }
+
+  .nas {
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 750px;
+  }
+
+  label {
+    width: 350px;
+  }
+
+  input:hover,
+  button:hover,
+  input[type="button"]:hover,
+  label:hover {
+    background-color: rgba(122, 120, 120, 0.726);
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
+}

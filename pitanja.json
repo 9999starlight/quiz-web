@@ -1,0 +1,122 @@
+[
+  {
+    "pitanje": "Ko upućuje RESPONSE na internetu?",
+    "tacan": "server"
+  },
+  {
+    "pitanje": "Kako se zove protokol za transfer datoteka (fajlova)?",
+    "tacan": "ftp"
+  },
+  {
+    "pitanje": "Standardna statusna poruka za uspešan HTTP request je:",
+    "tacan": "200",
+    "netacan1": "300",
+    "netacan2": "400",
+    "netacan3": "500"
+  },
+  {
+    "pitanje": "Statusne poruke za 'server error' počinju sa brojem",
+    "tacan": "5..",
+    "netacan1": "2..",
+    "netacan2": "3..",
+    "netacan3": "4.."
+  },
+  {
+    "pitanje": "Koji od ovih html tagova omogućava upotrebu novog reda i više povezanih razmaka u tekstu?",
+    "tacan": "pre",
+    "netacan1": "article",
+    "netacan2": "caption",
+    "netacan3": "cite"
+  },
+  {
+    "pitanje": "Da li je p (paragraph) block ili inline element?",
+    "tacan": "block",
+    "netacan1": "inline"
+  },
+  {
+    "pitanje": "Da li je img (image) block ili inline element?",
+    "tacan": "inline",
+    "netacan1": "block"
+  },
+  {
+    "pitanje": "Elementi figure i figure caption vezani su za koji html element?",
+    "tacan": "img",
+    "netacan1": "table",
+    "netacan2": "ul",
+    "netacan3": "article"
+  },
+  {
+    "pitanje": "Da li se z-index može postaviti kod elementa kojem nije određena pozicija (position)?",
+    "tacan": "NE",
+    "netacan1": "DA"
+  },
+  {
+    "pitanje": "Ako element ima css svojstva:<br>position: relative;<br>top: 30px;<br>biće pozicioniran:",
+    "tacan": "30px od vrha u odnosu na svoju normalnu poziciju",
+    "netacan1": "30px od vrha u odnosu na parent element",
+    "netacan2": "30px od vrha u odnosu na viewport"
+  },
+  {
+    "pitanje": "Ako parent element ima:<br>position: relative;<br>a child element<br>position: absolute;<br>bottom: 0;<br>child element će se nalaziti:",
+    "tacan": "na dnu roditeljskog elementa",
+    "netacan1": "na dnu viewporta",
+    "netacan2": "ispod roditeljskog elementa"
+  },
+  {
+    "pitanje": "div element ima svojstva:<br>display: flex;<br>align-items: flex-end;<br>Kako će sadržaj div-a biti raspoređen?",
+    "tacan": "Vertikalno, na dnu div-a",
+    "netacan1": "Horizontalno, sa desne strane na kraju div-a"
+  },
+  {
+    "pitanje": "img element ima svojstvo:<br>visibility: hidden;<br>Rezultat na strani je:",
+    "tacan": "img se ne vidi ali zauzima prostor na strani",
+    "netacan1": "img se ne vidi i ne zauzima prostor na strani",
+    "netacan2": "img je skriven iza prethodnog elementa"
+  },
+  {
+    "pitanje": "Koja od ovih funkcija pretvara string u broj?",
+    "tacan": "Sve navedene funkcije",
+    "netacan1": "Number()",
+    "netacan2": "ParseInt()",
+    "netacan3": "ParseFloat()"
+  },
+  {
+    "pitanje": "Da li anonimna funkcija može biti vrednost varijable?",
+    "tacan": "DA",
+    "netacan1": "NE"
+  },
+  {
+    "pitanje": "Koja ugrađena funkcija kombinuje tekst dva stringa i vraća novi string?",
+    "tacan": "concat()",
+    "netacan1": "includes()",
+    "netacan2": "replace()",
+    "netacan3": "substring()"
+  },
+  {
+    "pitanje": "Koja ugrađena funkcija dodaje jedan ili više elemenata na kraj niza?",
+    "tacan": "push()",
+    "netacan1": "pop()",
+    "netacan2": "shift()",
+    "netacan3": "unshift()"
+  },
+  {
+    "pitanje": "Kojim redom će navedeni brojevi biti ispisani u konzoli?<br><img src='images/pitanje1.png' alt = 'redosled' class = 'borderR'/>",
+    "tacan": "1432",
+    "netacan1": "1234",
+    "netacan2": "4312",
+    "netacan3": "1423"
+  },
+  {
+    "pitanje": "Koji je očekivani output navedenog JS koda?<br><img src='images/pitanje2.png' alt = 'sabiranje' class = 'borderR'/>",
+    "tacan": "44",
+    "netacan1": "4",
+    "netacan2": "Error",
+    "netacan3": "8"
+  },
+  {
+  "pitanje": "Koji je očekivani output navedenog JS koda?<br><img src='images/pitanje3.png' alt = 'vreme' class = 'borderR'/>",
+  "tacan": "Broj milisekundi od 1.1.1970. do sada",
+  "netacan1": "Današnji datum",
+  "netacan2": "Današnji datum i vreme"
+}
+]
