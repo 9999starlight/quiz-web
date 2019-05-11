@@ -39,7 +39,7 @@
     "netacan1": "block"
   },
   {
-    "pitanje": "Elementi figure i figure caption vezani su za koji html element?",
+    "pitanje": "Elementi figure i figcaption vezani su za koji html element?",
     "tacan": "img",
     "netacan1": "table",
     "netacan2": "ul",

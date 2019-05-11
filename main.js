@@ -106,8 +106,7 @@ function kviz() {
                         }
                     }
                     if (op = txt) {
-                        if (txt.value.toLowerCase() ===
-                            pitanja[trenutnoPitanje][1]) {
+                        if (txt.value.toLowerCase() === pitanja[trenutnoPitanje][1]) {
                             zbir++
                             op.classList.add('tacanBorder');
                         } else {
@@ -128,7 +127,7 @@ function kviz() {
                     parseFloat((zbir * 100) / pitanja.length).toFixed(2);
                 container.innerHTML = `<div class = 'pitanje borderR'>
                 Osvojili ste ${zbir} od ${pitanja.length} poena ili
-                ${procenat}%</div>`;
+                ${procenat}%</div><a href="index.html">Pokreni ponovo</a>`;
                 document.querySelector('#naslov').innerHTML =`Kviz je završen`;
             }
         });

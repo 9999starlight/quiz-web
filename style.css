@@ -1,6 +1,16 @@
-body {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
   text-align: center;
   font-family: 'Source Sans Pro', Arial, sans-serif;
   justify-content: center;
@@ -10,12 +20,24 @@ body {
   background-position: center center;
   background-attachment: fixed;
   background-color: #7c3a1396;
+  width: 100%;
+  min-height: 100vh;
 }
 
-.main-con,
-.container {
-  box-sizing: border-box;
+.main-con {
   padding: 0.8em;
+}
+
+.container {
+  padding: 1em 1em 2em 1em;
+}
+
+.container,
+.pitanje,
+label,
+input[type="text"] {
+  animation-name: delay;
+  animation-duration: 1s;
 }
 
 .flex {
@@ -24,14 +46,25 @@ body {
   align-items: center;
 }
 
-.nas {
-  margin: 2em auto 0 auto;
-}
-
 .contnaslov,
 .container {
   padding: 1em;
   background-color: rgba(199, 154, 137, 0.08);
+}
+
+.contnaslov {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  width: 70vw;
+}
+
+.nas {
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+  margin: 1em auto;
 }
 
 .borderR {
@@ -45,8 +78,8 @@ img {
 }
 
 h1,
-h2 {
-  font-size: 2em;
+h2,
+.nas h3 {
   font-weight: 500;
   border-radius: 20px;
   width: 150px;
@@ -54,13 +87,19 @@ h2 {
   padding: 0.5em;
 }
 
+.contnaslov h1:first-of-type {
+  font-size: 1.3em;
+}
+
 h2 {
-  font-size: 1.5em;
+  font-size: 1.1em;
   margin-bottom: 1.5em;
 }
 
-.nas h1 {
+.nas h3 {
   border: none;
+  font-size: 1.5em;
+  background-color: rgba(85, 73, 54, 0.164);
 }
 
 .contnaslov h1,
@@ -68,9 +107,8 @@ h2 {
   width: auto;
 }
 
-.nas h1,
-.nas h2 {
-  background-color: rgba(199, 154, 137, 0.08);
+a {
+  text-decoration: none;
 }
 
 .pitanje {
@@ -79,14 +117,15 @@ h2 {
   border: 2px inset whitesmoke;
   padding: 1em;
   margin-bottom: 0.5em;
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: 500;
 }
 
 input,
 button,
 input[type="button"],
-label {
+label,
+a {
   background-color: #423528;
   color: white;
   box-shadow: 0 6px 6px 0 #42362f, 0 6px 80px 0 #bba58fa6;
@@ -100,8 +139,9 @@ label {
 }
 
 button,
-input[type="button"] {
-  padding: 1em 1.6em 1em 1.6em;
+input[type="button"],
+a {
+  padding: 1em 1.2em;
   background-color: rgba(37, 13, 4, 0.89);
   font-size: 1.4em;
 }
@@ -116,31 +156,36 @@ input[type=text] {
   margin-bottom: 0.5em;
 }
 
-label > input {
+label>input {
   visibility: hidden;
   position: absolute;
 }
 
-label > input + div,
+label>input+div,
 button,
-input[type="button"] {
+input[type="button"],
+a {
   cursor: pointer;
 }
 
-label > input + div {
-  font-size: 1.2em;
+label>input+div {
+  font-size: 1em;
+  padding: 0.3em 0;
 }
 
-label > input:checked + div {
+label>input:checked+div {
   background-color: #8a73659c;
-  padding: 0.3em 0;
-  border-radius: 6px;
-  border: 1px inset rgba(255, 255, 255, 0.658);
-  font-size: 1.4em;
+  outline: 1px inset rgba(255, 255, 255, 0.658);
+  box-shadow: 0 0 2px white;
 }
 
 .none {
   display: none;
+}
+
+.contnaslov input {
+  width: 100px;
+  font-size: 1.2em;
 }
 
 .tacan {
@@ -148,7 +193,7 @@ label > input:checked + div {
 }
 
 .tacanBorder {
-  border: 7px solid rgb(5, 148, 5);
+  outline: 5px solid rgb(5, 148, 5);
 }
 
 .netacan {
@@ -156,33 +201,70 @@ label > input:checked + div {
 }
 
 .netacanBorder {
-  border: 7px solid rgba(207, 3, 3, 0.863);
+  outline: 5px solid rgba(207, 3, 3, 0.863);
 }
 
-@media (min-width: 800px) {
-  .contnaslov {
-    margin: 15%;
+@keyframes delay {
+  from {
+    transform: scale(0);
   }
+
+  to {
+    transform: scale(1);
+  }
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 768px) {
   .container {
     width: 600px;
-    max-height: 850px;
     margin: 0.5em auto 1em auto;
+    max-height: 850px;
+    padding: 1em;
+  }
+
+  .contnaslov h1:first-of-type {
+    font-size: 1.6em;
+  }
+
+  h2 {
+    font-size: 1.4em;
   }
 
   .nas {
-    flex-direction: row;
-    justify-content: space-evenly;
     width: 750px;
   }
 
+  .nas h3 {
+    font-size: 2em;
+  }
+
+  .pitanje {
+    font-size: 1.5em;
+  }
+
+
   label {
-    width: 350px;
+    width: 300px;
+    font-size: 1.1em;
+  }
+
+  label>input+div {
+    font-size: 1.2em;
   }
 
   input:hover,
   button:hover,
   input[type="button"]:hover,
-  label:hover {
+  label:hover,
+  a:hover {
     background-color: rgba(122, 120, 120, 0.726);
     transform: scale(1.1);
     transition: 0.5s;
