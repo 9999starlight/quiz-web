@@ -71,7 +71,6 @@ function kviz() {
 
             // setovanje vremena za kviz; odbrojavanje po sekundu;
             const odbrojOd = new Date().getTime() + 601000;
-            // 
             const sInt = setInterval(() => {
                     const razlika = odbrojOd - new Date().getTime();
                 let minuti = Math.floor(
