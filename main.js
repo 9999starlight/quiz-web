@@ -7,20 +7,20 @@ function intro() {
 }
 
 function kviz() {
-    document.querySelector('.contnaslov').classList.add('none'); // ukloni uvod
+    const introContainer = document.querySelector('.contnaslov');
+    introContainer.classList.add('none');
     document.querySelector('.main-con').classList.remove('none');
     const container = document.querySelector('#container');
     const tim = document.querySelector('#vreme');
     let pitanja = [];
-    let trenutnoPitanje = 0; // brojač-pitanja
-    let zbir = 0; // brojač-zbir tačnih odgovora
+    let trenutnoPitanje = 0;
+    let zbir = 0;
 
     fetch('pitanja.json')
         .then(res => res.json())
         .then(data => {
             data.forEach(d => {
-                pitanja.push([d.pitanje, d.tacan, d.netacan1,
-                    d.netacan2, d.netacan3
+                pitanja.push([d.pitanje, d.tacan, d.netacan1, d.netacan2, d.netacan3
                 ]);
             });
             napraviPitanja();
@@ -32,22 +32,22 @@ function kviz() {
                     clearInterval(sInt);
                     trenutnoPitanje = 0;
                     zbir = 0;
-                    pitanja = [] // praznim niz za novi fetch data
-                    return false; // zaustavljam funkciju
+                    pitanja = [];
+                    return false;
                 }
                 // Pitanja, opcije, random sort opcija, prikaz
                 document.querySelector('#naslov').innerHTML =
-                    `${trenutnoPitanje + 1} / ${pitanja.length}`;
+                     `${trenutnoPitanje + 1} / ${pitanja.length}`;
                 const pitanje = pitanja[trenutnoPitanje][0];
-                const sveOpcije = []
+                const sveOpcije = [];
                 sveOpcije.push(pitanja[trenutnoPitanje][1],
                     pitanja[trenutnoPitanje][2],
                     pitanja[trenutnoPitanje][3],
                     pitanja[trenutnoPitanje][4]);
-                sveOpcije.sort(() => Math.random() - 0.5);
                 container.innerHTML = ''; // prazan container za naredni krug
                 let listaOpcija = '';
-                sveOpcije.forEach(op => {
+                sveOpcije.sort(() => Math.random() - 0.5)
+                    .forEach(op => {
                     if (op != undefined && op === pitanja[trenutnoPitanje][1]) {
                     listaOpcija += `<label><input type = 'radio'
                         name = 'opcije' id = 't'
@@ -66,12 +66,12 @@ function kviz() {
                 container.innerHTML += listaOpcija;
                 container.innerHTML += `<button>Sledeće pitanje</button>`;
                 document.querySelector('button')
-                    .addEventListener('click', proveriOdgovor);
+                   .addEventListener('click', proveriOdgovor);
             }
 
-            // setovanje vremena za kviz.
-            const odbrojOd = new Date().getTime() + 602000;
-            // odbrojavanje po sekundu, račun za minute and sekunde
+            // setovanje vremena za kviz; odbrojavanje po sekundu;
+            const odbrojOd = new Date().getTime() + 601000;
+            // 
             const sInt = setInterval(() => {
                     const razlika = odbrojOd - new Date().getTime();
                 let minuti = Math.floor(
@@ -119,7 +119,7 @@ function kviz() {
                 trenutnoPitanje++;
                 setTimeout(function () {
                     napraviPitanja();
-                }, 2000);
+                }, 1500);
             }
 
             function kraj() {
@@ -130,5 +130,11 @@ function kviz() {
                 ${procenat}%</div><a href="index.html">Pokreni ponovo</a>`;
                 document.querySelector('#naslov').innerHTML =`Kviz je završen`;
             }
-        });
+        }).catch(err => {
+            console.log(err.message);
+            introContainer.classList.remove('none');
+            document.querySelector('.main-con').classList.add('none');
+            introContainer.innerHTML +=
+              `<h1 class = "errorMessage">Request failed, please try again later!</h1>`;
+      });
 }
