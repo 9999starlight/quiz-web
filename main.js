@@ -88,6 +88,7 @@ function kviz() {
             );
 
             function proveriOdgovor() {
+                document.querySelector('button').removeEventListener('click', proveriOdgovor);
                 const opcije =
                     document.querySelectorAll('input[name="opcije"]');
                 const txt = document.querySelector('input[type=text]');
